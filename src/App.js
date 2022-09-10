@@ -15,7 +15,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>{JSON.stringify(starWarsData)}</p>
-        <h2>The count is {count}</h2>
+        <h2>Get The Next Character {count}</h2>
         <button
           onClick={() => setCount(prevVal => prevVal + 1)}
         >
