@@ -3,23 +3,23 @@ import './App.css';
 import React from 'react';
 
 function App() {
-  const [starWarsData, setStarWarsData] = React.useState({});
-  const [count, setCount] = React.useState(0);
-
+  const [bookData, setBookData] = React.useState({});
+  let random = Math.floor(Math.random()*68835)
+  const [count, setCount] = React.useState(random);
   React.useEffect(() => {
-    fetch(`https://swapi.dev/api/people/1${count}`)
+    fetch(`https://gutendex.com/books/${count}`)
       .then(resp => resp.json())
-      .then(data => setStarWarsData(data))
+      .then(data => setBookData(data))
   },[count])
   return (
     <div className="App">
       <header className="App-header">
-        <p>{JSON.stringify(starWarsData)}</p>
-        <h2>Get The Next Character {count}</h2>
+        <p>{JSON.stringify(bookData)}</p>
+        <h2>Get A Random Book{count}</h2>
         <button
-          onClick={() => setCount(prevVal => prevVal + 1)}
+          onClick={() => setCount(random)}
         >
-          Add
+          Random
         </button>
       </header>
     </div>
